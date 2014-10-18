@@ -33,7 +33,15 @@
             this.btnBaixar = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pbImagem = new System.Windows.Forms.PictureBox();
+            this.txtUrl2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtUrl3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pbImagem2 = new System.Windows.Forms.PictureBox();
+            this.pbImagem3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +62,7 @@
             // 
             // btnBaixar
             // 
-            this.btnBaixar.Location = new System.Drawing.Point(106, 51);
+            this.btnBaixar.Location = new System.Drawing.Point(369, 51);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(75, 23);
             this.btnBaixar.TabIndex = 2;
@@ -66,7 +74,8 @@
             // 
             this.progressBar1.Location = new System.Drawing.Point(15, 80);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(257, 23);
+            this.progressBar1.Size = new System.Drawing.Size(783, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Visible = false;
             // 
@@ -80,11 +89,69 @@
             this.pbImagem.TabStop = false;
             this.pbImagem.Visible = false;
             // 
+            // txtUrl2
+            // 
+            this.txtUrl2.Location = new System.Drawing.Point(278, 25);
+            this.txtUrl2.Name = "txtUrl2";
+            this.txtUrl2.Size = new System.Drawing.Size(257, 20);
+            this.txtUrl2.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(275, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "URL";
+            // 
+            // txtUrl3
+            // 
+            this.txtUrl3.Location = new System.Drawing.Point(541, 25);
+            this.txtUrl3.Name = "txtUrl3";
+            this.txtUrl3.Size = new System.Drawing.Size(257, 20);
+            this.txtUrl3.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(538, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "URL";
+            // 
+            // pbImagem2
+            // 
+            this.pbImagem2.Location = new System.Drawing.Point(278, 109);
+            this.pbImagem2.Name = "pbImagem2";
+            this.pbImagem2.Size = new System.Drawing.Size(257, 140);
+            this.pbImagem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagem2.TabIndex = 9;
+            this.pbImagem2.TabStop = false;
+            this.pbImagem2.Visible = false;
+            // 
+            // pbImagem3
+            // 
+            this.pbImagem3.Location = new System.Drawing.Point(545, 109);
+            this.pbImagem3.Name = "pbImagem3";
+            this.pbImagem3.Size = new System.Drawing.Size(257, 140);
+            this.pbImagem3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagem3.TabIndex = 10;
+            this.pbImagem3.TabStop = false;
+            this.pbImagem3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(814, 261);
+            this.Controls.Add(this.pbImagem3);
+            this.Controls.Add(this.pbImagem2);
+            this.Controls.Add(this.txtUrl3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtUrl2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pbImagem);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnBaixar);
@@ -93,6 +160,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +174,12 @@
         private System.Windows.Forms.Button btnBaixar;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pbImagem;
+        private System.Windows.Forms.TextBox txtUrl2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUrl3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbImagem2;
+        private System.Windows.Forms.PictureBox pbImagem3;
     }
 }
 
