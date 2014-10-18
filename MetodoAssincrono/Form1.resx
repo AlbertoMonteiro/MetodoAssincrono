@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtUrl2.Text" xml:space="preserve">
+    <value>http://www.mad4wheels.com/webpics/hires/00004379%20-%202009%20AC%20Schnitzer%20ACS5%20Sport%20Touring%20(%20based%20on%20BMW%20M5%20E61%20)/2009_AC_Schnitzer_ACS5_Sport_Touring_(_based_on_BMW_M5_E61_)_006_0846.jpg</value>
+  </data>
 </root>

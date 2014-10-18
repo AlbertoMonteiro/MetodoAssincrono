@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.btnBaixar = new System.Windows.Forms.Button();
@@ -39,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pbImagem2 = new System.Windows.Forms.PictureBox();
             this.pbImagem3 = new System.Windows.Forms.PictureBox();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem3)).BeginInit();
@@ -59,6 +62,9 @@
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(257, 20);
             this.txtUrl.TabIndex = 1;
+            this.txtUrl.Text = "http://www.mad4wheels.com/webpics/hires/00009249%20-%202011%20AC%20Schnitzer%20AC" +
+    "S1%20(%20based%20on%20BMW%201er%20F20%202.0d%20)/2011_AC_Schnitzer_ACS1_(_based_" +
+    "on_BMW_1er_F20_2.0d_)_001_6390.jpg";
             // 
             // btnBaixar
             // 
@@ -74,8 +80,7 @@
             // 
             this.progressBar1.Location = new System.Drawing.Point(15, 80);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(783, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.Size = new System.Drawing.Size(257, 23);
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Visible = false;
             // 
@@ -95,6 +100,7 @@
             this.txtUrl2.Name = "txtUrl2";
             this.txtUrl2.Size = new System.Drawing.Size(257, 20);
             this.txtUrl2.TabIndex = 6;
+            this.txtUrl2.Text = resources.GetString("txtUrl2.Text");
             // 
             // label2
             // 
@@ -111,6 +117,7 @@
             this.txtUrl3.Name = "txtUrl3";
             this.txtUrl3.Size = new System.Drawing.Size(257, 20);
             this.txtUrl3.TabIndex = 8;
+            this.txtUrl3.Text = "http://skilal.com/wp-content/uploads/2014/07/Bmw-x6-m-black-.jpg";
             // 
             // label3
             // 
@@ -141,11 +148,29 @@
             this.pbImagem3.TabStop = false;
             this.pbImagem3.Visible = false;
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(278, 80);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(257, 23);
+            this.progressBar2.TabIndex = 11;
+            this.progressBar2.Visible = false;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(541, 80);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(261, 23);
+            this.progressBar3.TabIndex = 12;
+            this.progressBar3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 261);
+            this.Controls.Add(this.progressBar3);
+            this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.pbImagem3);
             this.Controls.Add(this.pbImagem2);
             this.Controls.Add(this.txtUrl3);
@@ -180,6 +205,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbImagem2;
         private System.Windows.Forms.PictureBox pbImagem3;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ProgressBar progressBar3;
     }
 }
 

@@ -18,9 +18,24 @@ namespace MetodoAssincrono
             var webClient = new WebClient();
 
             progressBar1.Visible = true;
+            progressBar2.Visible = true;
+            progressBar3.Visible = true;
 
+            webClient.DownloadProgressChanged += (o, args) => { progressBar1.Value = args.ProgressPercentage; };
             webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted;
             webClient.DownloadDataAsync(new Uri(txtUrl.Text));
+            
+            var webClient2 = new WebClient();
+
+            webClient2.DownloadProgressChanged += (o, args) => { progressBar2.Value = args.ProgressPercentage; };
+            webClient2.DownloadDataCompleted += WebClientOnDownloadDataCompleted2;
+            webClient2.DownloadDataAsync(new Uri(txtUrl2.Text));
+
+            var webClient3 = new WebClient();
+
+            webClient3.DownloadProgressChanged += (o, args) => { progressBar3.Value = args.ProgressPercentage; };
+            webClient3.DownloadDataCompleted += WebClientOnDownloadDataCompleted3;
+            webClient3.DownloadDataAsync(new Uri(txtUrl3.Text));
         }
 
         private void WebClientOnDownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
@@ -33,12 +48,6 @@ namespace MetodoAssincrono
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 pbImagem.Image = new Bitmap(memoryStream);
             }
-
-            var webClient = new WebClient();
-
-            progressBar1.Visible = true;
-            webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted2;
-            webClient.DownloadDataAsync(new Uri(txtUrl2.Text));
         }
 
         private void WebClientOnDownloadDataCompleted2(object sender, DownloadDataCompletedEventArgs e)
@@ -50,12 +59,6 @@ namespace MetodoAssincrono
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 pbImagem2.Image = new Bitmap(memoryStream);
             }
-
-            var webClient = new WebClient();
-
-            progressBar1.Visible = true;
-            webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted3;
-            webClient.DownloadDataAsync(new Uri(txtUrl3.Text));
         }
 
         private void WebClientOnDownloadDataCompleted3(object sender, DownloadDataCompletedEventArgs e)
