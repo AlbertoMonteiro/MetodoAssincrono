@@ -13,27 +13,22 @@ namespace MetodoAssincrono
             InitializeComponent();
         }
 
-        private void btnBaixar_Click(object sender, EventArgs e)
+        private async void btnBaixar_Click(object sender, EventArgs e)
         {
             var webClient = new WebClient();
 
             progressBar1.Visible = true;
-            webClient.DownloadDataCompleted += (o, args) =>
-            {
-                progressBar1.Visible = false;
-                pbImagem.Visible = true;
+            webClient.DownloadProgressChanged += (o, args) => { progressBar1.Value = args.ProgressPercentage; };
+            var data = await webClient.DownloadDataTaskAsync(new Uri(txtUrl.Text));
 
-                using (var memoryStream = new MemoryStream(args.Result))
-                {
-                    memoryStream.Seek(0, SeekOrigin.Begin);
-                    pbImagem.Image = new Bitmap(memoryStream);
-                }
-            };
-            webClient.DownloadProgressChanged += (o, args) =>
+            progressBar1.Visible = false;
+            pbImagem.Visible = true;
+
+            using (var memoryStream = new MemoryStream(data))
             {
-                progressBar1.Value = args.ProgressPercentage;
-            };
-            webClient.DownloadDataAsync(new Uri(txtUrl.Text));
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                pbImagem.Image = new Bitmap(memoryStream);
+            }
         }
     }
 }
