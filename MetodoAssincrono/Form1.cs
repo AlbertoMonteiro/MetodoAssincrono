@@ -18,40 +18,51 @@ namespace MetodoAssincrono
             var webClient = new WebClient();
 
             progressBar1.Visible = true;
-            var data = webClient.DownloadData(new Uri(txtUrl.Text));
 
+            webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted;
+            webClient.DownloadDataAsync(new Uri(txtUrl.Text));
+        }
+
+        private void WebClientOnDownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
+        {
             progressBar1.Visible = false;
             pbImagem.Visible = true;
 
-            using (var memoryStream = new MemoryStream(data))
+            using (var memoryStream = new MemoryStream(e.Result))
             {
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 pbImagem.Image = new Bitmap(memoryStream);
             }
-            
-            webClient = new WebClient();
+
+            var webClient = new WebClient();
 
             progressBar1.Visible = true;
-            data = webClient.DownloadData(new Uri(txtUrl2.Text));
+            webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted2;
+            webClient.DownloadDataAsync(new Uri(txtUrl2.Text));
+        }
 
-            progressBar1.Visible = false;
+        private void WebClientOnDownloadDataCompleted2(object sender, DownloadDataCompletedEventArgs e)
+        {
             pbImagem2.Visible = true;
 
-            using (var memoryStream = new MemoryStream(data))
+            using (var memoryStream = new MemoryStream(e.Result))
             {
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 pbImagem2.Image = new Bitmap(memoryStream);
             }
-            
-            webClient = new WebClient();
+
+            var webClient = new WebClient();
 
             progressBar1.Visible = true;
-            data = webClient.DownloadData(new Uri(txtUrl3.Text));
+            webClient.DownloadDataCompleted += WebClientOnDownloadDataCompleted3;
+            webClient.DownloadDataAsync(new Uri(txtUrl3.Text));
+        }
 
-            progressBar1.Visible = false;
+        private void WebClientOnDownloadDataCompleted3(object sender, DownloadDataCompletedEventArgs e)
+        {
             pbImagem3.Visible = true;
 
-            using (var memoryStream = new MemoryStream(data))
+            using (var memoryStream = new MemoryStream(e.Result))
             {
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 pbImagem3.Image = new Bitmap(memoryStream);
